@@ -64,12 +64,10 @@ const Basket = ({ pizzasBusket,setPizzasBusket}) => {
             <div className="cart__bottom">
               <div className="cart__bottom-details">
                 <span>
-                  {' '}
-                  Всего пицц: <b>3 шт.</b>{' '}
+                  Всего пицц: <b>3 шт.</b>
                 </span>
                 <span>
-                  {' '}
-                  Сумма заказа: <b>900 ₽</b>{' '}
+                  Сумма заказа: <b>900 ₽</b>
                 </span>
               </div>
               <div className="cart__bottom-buttons">
