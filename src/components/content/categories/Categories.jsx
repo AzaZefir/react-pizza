@@ -4,7 +4,7 @@ const Categories = ({ items }) => {
       <ul>
         <li className="active">Все</li>
         {items.map((item) => (
-          <li>{item}</li>
+          <li key={item}>{item}</li>
         ))}
       </ul>
     </div>

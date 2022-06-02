@@ -17,7 +17,7 @@ const Content = ({ pizzas, setPizzas }) => {
         <h2 className="content__title">Все пиццы</h2>
         <div className="content__items">
           {pizzas.map((pizza) => (
-            <PizzaBlock {...pizza} pizzas={pizzas} pizza={pizza} setPizzas={setPizzas} />
+            <PizzaBlock  key={pizza.id} {...pizza} pizzas={pizzas} pizza={pizza} setPizzas={setPizzas} />
           ))}
         </div>
       </div>

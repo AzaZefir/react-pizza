@@ -2,7 +2,7 @@ import { CardAddPlusSvg } from '../../../assets/svg/Svg';
 
 const PizzaBlock = ({id, image,name,}) => {
   return (
-    <div className="pizza-block" key={id}>
+    <div className="pizza-block">
       <img className="pizza-block__image" src={image} alt="Pizza" />
       <h4 className="pizza-block__title">{name}</h4>
       <div className="pizza-block__selector">
