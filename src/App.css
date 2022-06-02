@@ -1,7 +1,11 @@
 @import'./components/header/Header.css';
-@import './components/content/contentTop/ContentTop.css';
+@import './components/content/categories/Categories.css';
 @import './components/content/pizzaBlock/PizzaBlock.css';
 
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
+@import './commons/slider/Slider.css';
 
 /* @font-face {
   font-family: 'Proxima Nova';

@@ -1,15 +1,25 @@
-import ContentTop from './contentTop/ContentTop';
+import SliderSlick from '../../commons/slider/Slider';
+import Categories from './categories/Categories';
 import PizzaBlock from './pizzaBlock/PizzaBlock';
+import Sort from './sort/Sort';
 
-const Content = ({pizzas,setPizzas}) => {
+const Content = ({ pizzas, setPizzas }) => {
   return (
     <div className="content">
       <div className="container">
-        <ContentTop />
+        <SliderSlick />
+        <div className="content__top">
+          <Categories
+            items={['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые',]}
+          />
+          <Sort />
+        </div>
         <h2 className="content__title">Все пиццы</h2>
-        
-        <PizzaBlock pizzas={pizzas} setPizzas={setPizzas}/>
-        
+        <div className="content__items">
+          {pizzas.map((pizza) => (
+            <PizzaBlock {...pizza} pizzas={pizzas} pizza={pizza} setPizzas={setPizzas} />
+          ))}
+        </div>
       </div>
     </div>
   );
