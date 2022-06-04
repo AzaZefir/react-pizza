@@ -6,6 +6,7 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 @import './commons/slider/Slider.css';
+@import './components/content/sort/Sort.css';
 
 /* @font-face {
   font-family: 'Proxima Nova';

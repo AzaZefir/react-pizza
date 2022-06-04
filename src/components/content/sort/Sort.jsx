@@ -1,20 +1,41 @@
+import { useState } from 'react';
 import { SortLabelSvg } from '../../../assets/svg/Svg';
 
-const Sort = () => {
+const Sort = ({ items, onClickSort }) => {
+  const [active, setActive] = useState(0);
+  const [visible, setVisible] = useState(false)
+
+  const onSelectSort = (index) => {
+    setActive(index);
+    onClickSort(index);
+    setVisible(true)
+  };
+  const onVisible = () => {
+    setVisible(!visible)
+  }
+
   return (
     <div className="sort">
       <div className="sort__label">
-        <SortLabelSvg />
+        <SortLabelSvg visible={visible}/>
         <b>Сортировка по:</b>
-        <span>популярности</span>
+        <span onClick={onVisible}>популярности</span>
       </div>
+      {visible &&
       <div className="sort__popup">
         <ul>
-          <li className="active">популярности</li>
-          <li>цене</li>
-          <li>алфавиту</li>
+          {items.map((item, index) => (
+            <li
+              className={active === index ? 'active' : ''}
+              key={`${item}_${index}`}
+              onClick={() => onSelectSort(index)}>
+              {item}
+            </li>
+          ))}
         </ul>
       </div>
+      }
+      
     </div>
   );
 };

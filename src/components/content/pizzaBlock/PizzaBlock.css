@@ -1,8 +1,9 @@
 
 .pizza-block {
-    width: 280px;
+    /* width: 280px; */
     text-align: center;
     margin-bottom: 65px;
+    margin: 25px;
   }
   /* .pizza-block:not(:nth-of-type(4n)) {
     margin-right: 35px;
@@ -59,6 +60,10 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
     border-radius: 5px;
     cursor: auto;
+  }
+  .pizza-block__selector ul li.disabled {
+    opacity: 0.2;
+    pointer-events:none;
   }
   .pizza-block__bottom {
     display: -webkit-box;
