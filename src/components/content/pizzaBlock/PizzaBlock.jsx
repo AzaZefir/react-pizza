@@ -1,6 +1,6 @@
 import { CardAddPlusSvg } from '../../../assets/svg/Svg';
 
-const PizzaBlock = ({ image,name,}) => {
+const PizzaBlock = ({ image,name,price}) => {
   return (
     <div className="pizza-block" >
       <img className="pizza-block__image" src={image} alt="Pizza" />
@@ -17,7 +17,7 @@ const PizzaBlock = ({ image,name,}) => {
         </ul>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">от 395 ₽</div>
+        <div className="pizza-block__price">от {price} ₽</div>
         <div className="button button--outline button--add">
           <CardAddPlusSvg />
           <span>Добавить</span>

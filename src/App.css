@@ -1,43 +1,63 @@
-@import'./components/header/Header.css';
+@import './components/header/Header.css';
 @import './components/content/categories/Categories.css';
 @import './components/content/pizzaBlock/PizzaBlock.css';
 
-@import "~slick-carousel/slick/slick.css"; 
-@import "~slick-carousel/slick/slick-theme.css";
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
 
 @import './commons/slider/Slider.css';
 @import './components/content/sort/Sort.css';
 
-/* @font-face {
+@font-face {
   font-family: 'Proxima Nova';
-  src: url("./fonts/ProximaNova-Black.eot");
-  src: local("./fonts/Proxima Nova Black"), local("ProximaNova-Black"), url("./fonts/ProximaNova-Black.eot?#iefix") format("embedded-opentype"), url("./fonts/ProximaNova-Black.woff") format("woff"), url("./fonts/ProximaNova-Black.ttf") format("truetype");
+  src: url('./commons/fonts/ProximaNova-Black.eot');
+  src: local('./commons/Proxima Nova Black'), local('ProximaNova-Black'),
+    url('./commons/fonts/ProximaNova-Black.eot?#iefix') format('embedded-opentype'),
+    url('./commons/fonts/ProximaNova-Black.woff') format('woff'),
+    url('./commons/fonts/ProximaNova-Black.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
   font-family: 'Proxima Nova';
-  src: url("./fonts/ProximaNova-Bold.eot");
-  src: local("./fonts/Proxima Nova Bold"), local("ProximaNova-Bold"), url("./fonts/ProximaNova-Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/ProximaNova-Bold.woff") format("woff"), url("./fonts/ProximaNova-Bold.ttf") format("truetype");
+  src: url('./commons/fonts/ProximaNova-Bold.eot');
+  src: local('./commons/fonts/Proxima Nova Bold'), local('ProximaNova-Bold'),
+    url('./commons/fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./commons/fonts/ProximaNova-Bold.woff') format('woff'),
+    url('./commons/fonts/ProximaNova-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'Proxima Nova';
-  src: url("./fonts/ProximaNova-Regular.eot");
-  src: local("./fonts/Proxima Nova Regular"), local("ProximaNova-Regular"), url("./fonts/ProximaNova-Regular.eot?#iefix") format("embedded-opentype"), url("./fonts/ProximaNova-Regular.woff") format("woff"), url("./fonts/ProximaNova-Regular.ttf") format("truetype");
+  src: url('./commons/fonts/ProximaNova-Regular.eot');
+  src: local('./commons/Proxima Nova Regular'), local('ProximaNova-Regular'),
+    url('./commons/fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./commons/fonts/ProximaNova-Regular.woff') format('woff'),
+    url('./commons/fonts/ProximaNova-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Proxima Nova';
-  src: url("./fonts/ProximaNova-Extrabld.eot");
-  src: local("./fonts/Proxima Nova Extrabold"), local("ProximaNova-Extrabld"), url("./fonts/ProximaNova-Extrabld.eot?#iefix") format("embedded-opentype"), url("./fonts/ProximaNova-Extrabld.woff") format("woff"), url("./fonts/ProximaNova-Extrabld.ttf") format("truetype");
+  src: url('./commons/fonts/ProximaNova-Extrabld.eot');
+  src: local('./commons/fonts/Proxima Nova Extrabold'), local('ProximaNova-Extrabld'),
+    url('./commons/fonts/ProximaNova-Extrabld.eot?#iefix') format('embedded-opentype'),
+    url('./commons/fonts/ProximaNova-Extrabld.woff') format('woff'),
+    url('./commons/fonts/ProximaNova-Extrabld.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
-} */
+}
 
-a, span, p, b, h1, h2, h3, h4, h5 {
+a,
+span,
+p,
+b,
+h1,
+h2,
+h3,
+h4,
+h5 {
   color: #232323;
 }
 h1 {
@@ -60,8 +80,8 @@ a {
   min-width: 100px;
   text-align: center;
   cursor: pointer;
-  -webkit-transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
-  transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
+  -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   border: 1px solid transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -69,12 +89,16 @@ a {
   -ms-user-select: none;
   user-select: none;
 }
-.button, .button span {
+.button,
+.button span {
   color: #fff;
 }
-.button i, .button span, .button path, .button svg {
-  -webkit-transition: all .15s ease-in-out;
-  transition: all .15s ease-in-out;
+.button i,
+.button span,
+.button path,
+.button svg {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
 }
 .button:hover {
   background-color: #f24701;
@@ -103,14 +127,16 @@ a {
 .button--black {
   background-color: #232323;
 }
-.button--black:hover, .button--black:active {
+.button--black:hover,
+.button--black:active {
   background-color: #3d3d3d;
 }
 .button--outline {
   background-color: #fff;
   border-color: #fe5f1e;
 }
-.button--outline, .button--outline span {
+.button--outline,
+.button--outline span {
   color: #fe5f1e;
 }
 .button--outline svg path {
@@ -119,7 +145,8 @@ a {
 .button--outline:hover {
   background-color: #fe5f1e;
 }
-.button--outline:hover, .button--outline:hover span {
+.button--outline:hover,
+.button--outline:hover span {
   color: #fff;
 }
 .button--outline:hover svg path {
@@ -280,9 +307,11 @@ body {
   color: #b6b6b6;
   font-size: 18px;
 }
-.cart__clear span, .cart__clear svg, .cart__clear path {
-  -webkit-transition: all .15s ease-in-out;
-  transition: all .15s ease-in-out;
+.cart__clear span,
+.cart__clear svg,
+.cart__clear path {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
 }
 .cart__clear:hover svg path {
   stroke: #373737;
@@ -307,7 +336,8 @@ body {
   -ms-flex-align: center;
   align-items: center;
   margin-right: 15px;
-  width: 10%}
+  width: 10%;
+}
 .cart__item-img img {
   width: 80px;
   height: 80px;
@@ -323,7 +353,8 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 40%}
+  width: 40%;
+}
 .cart__item-info h3 {
   font-weight: bold;
   font-size: 22px;
@@ -344,7 +375,8 @@ body {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  width: 13%}
+  width: 13%;
+}
 .cart__item-count-minus svg path:first-of-type {
   display: none;
 }
@@ -361,7 +393,8 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 33%}
+  width: 33%;
+}
 .cart__item-price b {
   font-weight: bold;
   font-size: 22px;
@@ -377,7 +410,8 @@ body {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  width: 4%}
+  width: 4%;
+}
 .cart__item-remove .button {
   border-color: #ddd;
 }
@@ -393,7 +427,8 @@ body {
   height: 11.5px;
   position: relative;
 }
-.cart__item-remove .button:hover, .cart__item-remove .button:active {
+.cart__item-remove .button:hover,
+.cart__item-remove .button:active {
   border-color: #2a2a2a;
   background-color: #2a2a2a;
 }
