@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-const Categories = ({ items, onClickCategories,onFilterPizzas }) => {
+const Categories = ({ items, onClickCategories }) => {
   const [active, setActive] = useState('');
 
   const onSelectCategories = (index) => {
     onClickCategories(index);
     setActive(index);
-    onFilterPizzas(index)
+    
   };
 
   return (

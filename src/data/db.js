@@ -4,7 +4,7 @@ export const pizzaBlock = [
     image:
       'https://dodopizza-a.akamaihd.net/static/Img/Products/3401546fe43c42e9a05325a74c937ce4_292x292.jpeg',
     name: 'Цыпленок барбекю',
-    types: [0, 1],
+    types: [1],
     sizes: [26, 30, 40],
     category: 1,
     price: '53',
@@ -26,8 +26,8 @@ export const pizzaBlock = [
     image:
       'https://dodopizza-a.akamaihd.net/static/Img/Products/c940c5751e6d420e997d86c26a8ba16f_292x292.jpeg',
     name: 'Кисло-сладкий цыпленок',
-    types: [0, 1],
-    sizs: [26, 30, 40],
+    types: [0],
+    sizes: [26, 30, 40],
     category: 4,
     price: '55',
     rating: '5',
@@ -82,7 +82,7 @@ export const pizzaBlock = [
     image:
       'https://dodopizza-a.akamaihd.net/static/Img/Products/525becd5f6d845ea9f83af0af7e44eea_292x292.jpeg',
     name: 'Четыре сезона',
-    types: [0, 1],
+    types: [1],
     sizes: [26, 30, 40],
     category: 0,
     price: '60',
@@ -105,7 +105,7 @@ export const pizzaBlock = [
       'https://dodopizza-a.akamaihd.net/static/Img/Products/596181578602410dbd9e9f75d66ee61d_292x292.jpeg',
     name: 'Безумный микс',
     types: [0, 1],
-    size: [26, 30, 40],
+    sizes: [26, 30, 40],
     category: 0,
     price: '62',
     rating: '4',
