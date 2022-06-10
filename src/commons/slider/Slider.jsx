@@ -1,8 +1,7 @@
-import SliderImg from './../../assets/img/Без названия.jpg';
 import Slider from 'react-slick';
+import { sliderCard } from '../../data/db';
 
 const SliderSlick = () => {
-  
   const settings = {
     infinite: true,
     speed: 500,
@@ -14,25 +13,11 @@ const SliderSlick = () => {
   return (
     <div>
       <Slider {...settings} className="slider__wrapper">
-       
-        <div className='slider__img'>
-          <img src={SliderImg} alt="" />
-        </div>
-        <div>
-          <img src={SliderImg} alt="" />
-        </div>
-        <div>
-          <img src={SliderImg} alt="" />
-        </div>
-        <div>
-          <img src={SliderImg} alt="" />
-        </div>
-        <div>
-          <img src={SliderImg} alt="" />
-        </div>
-        <div>
-          <img src={SliderImg} alt="" />
-        </div>
+        {sliderCard.map((slide) => (
+          <div key={slide.id} className="slider__img">
+            <img src={slide.img} alt="" />
+          </div>
+        ))}
       </Slider>
     </div>
   );

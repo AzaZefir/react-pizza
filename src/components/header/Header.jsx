@@ -23,7 +23,7 @@ const Header = () => {
               <span>520 ₽</span>
               <div className="button__delimiter"></div>
               <HeaderSvg />
-              <span>3</span>
+              <span >3</span>
             </Button>
           </Link>
         </div>

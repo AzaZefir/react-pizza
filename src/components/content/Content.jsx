@@ -3,17 +3,27 @@ import Categories from './categories/Categories';
 import PizzaBlock from './pizzaBlock/PizzaBlock';
 import Sort from './sort/Sort';
 import { useState } from 'react';
+import MyModal from '../../commons/modal/MyModal';
+import { PizzaInfoCard } from './pizzaInfoCard/PizzaInfoCard';
 
 const Content = ({ pizzas, setPizzas }) => {
   const [categories, setCategories] = useState(null);
-  const [sort,setSort]= useState()
+  const [sort, setSort] = useState({
+    type: 'rating',
+  });
+
+  //!activate modal when click on img by own data 
+  const [id, setId] = useState(0);
+  const [modalActive, setModalActive] = useState(false);
 
   const onClickCategories = (index) => {
     setCategories(categories);
   };
-  const onClickSort = (index) => {
-    setSort(sort)
-  }
+  const onClickSort = (type) => {
+    setSort(type);
+    const sortedPizzas = pizzas.sort((a, b) => a[type.type]?.localeCompare(b[type.type]));
+    setPizzas(sortedPizzas);
+  };
 
   return (
     <div className="content">
@@ -25,10 +35,14 @@ const Content = ({ pizzas, setPizzas }) => {
             items={['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые']}
           />
           <Sort
+            activeSortType={sort.type}
             onClickSort={onClickSort}
             items={[
-              'популярности','цене','алфавит' 
-            ]}/>
+              { name: 'популярности', type: 'rating' },
+              { name: 'цене', type: 'price' },
+              { name: 'алфавит', type: 'name' },
+            ]}
+          />
         </div>
         <h2 className="content__title">Все пиццы</h2>
         <div className="content__items">
@@ -39,16 +53,20 @@ const Content = ({ pizzas, setPizzas }) => {
               pizzas={pizzas}
               pizza={pizza}
               setPizzas={setPizzas}
+              setModalActive={setModalActive}
+              setId={setId}
+              pizzaId={pizza.id}
             />
           ))}
         </div>
+        <MyModal active={modalActive} setActive={setModalActive}>
+          <PizzaInfoCard id={id} />
+        </MyModal>
       </div>
     </div>
   );
 };
 export default Content;
-
-
 
 // import SliderSlick from '../../commons/slider/Slider';
 // import Categories from './categories/Categories';
@@ -63,7 +81,7 @@ export default Content;
 //   const [sortPizzas, setSortPizzas] = useState({
 //     type: 'rating',
 //   })
-  
+
 //   const onFilterPizzas = (categoriesItem) => {
 //     if (categoriesItem === '') {
 //       setFilterPizzas(pizzas)
@@ -102,7 +120,7 @@ export default Content;
 //             onSortPizzas={onSortPizzas}
 //             onClickSort={onClickSort}
 //             items={[
-//               { name: 'популярности', type: 'rating', }, 
+//               { name: 'популярности', type: 'rating', },
 //               { name: 'цене', type: 'price', },
 //               { name: 'алфавит', type: 'name', },
 //             ]}/>

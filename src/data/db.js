@@ -15,7 +15,7 @@ export const pizzaBlock = [
     image:
       'https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg',
     name: 'Крэйзи пепперони',
-    types: [0, 1],
+    types: [0],
     sizes: [26, 30, 40],
     category: 2,
     price: '54',
@@ -154,11 +154,11 @@ export const pizzasInBusket = [
 export const sliderCard = [
   {
     id: 1,
-    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9pUXug-yIyu6KCNPPBTATVfNUmjzh8kJ2XPfpLh5ga-J3T4qVIM26ZUpMrQ0rxE0NiK0&usqp=CAU',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR0c3T4Ae4K23QTHq2YavjZuW5pbGhrkKKLA&usqp=CAU',
   },
   {
     id: 2,
-    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRVYPrL0DosdGaXtpc-x2dEmRIyO76sAMzOyAw0alWp5l_vncKfnSf-rSDY9u_l8xbknU&usqp=CAU',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_u-ys58DEcCU6NIBMuibEWBmUX6SZCTWwiA&usqp=CAU',
   },
   {
     id: 3,
@@ -195,5 +195,112 @@ export const sliderCard = [
   {
     id: 11,
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgZD-23QXg86bptHuNH_-tw52NOjTIAlm90kAY8nlOZ-serQyO3q6wsT9qPMrJza-5px0&usqp=CAU',
+  },
+];
+export const modalInfo = [
+  {
+    id: 0,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR0c3T4Ae4K23QTHq2YavjZuW5pbGhrkKKLA&usqp=CAU",
+    title: "Цыпленок барбекю",
+    description:
+      "Такого вы еще не пробовали",
+    content:"Соус альфредо, моцарелла, лук красный, перец, смесь сыров чеддер и пармезан, куриные кусочки, соус сладкий чили",
+    contentFooter:
+      "",
+  },
+  {
+    id: 1,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR0c3T4Ae4K23QTHq2YavjZuW5pbGhrkKKLA&usqp=CAU",
+    title: "Цыпленок барбекю",
+    description:
+      "Такого вы еще не пробовали",
+    content:"Соус альфредо, моцарелла, лук красный, перец, смесь сыров чеддер и пармезан, куриные кусочки, соус сладкий чили",
+    contentFooter:
+      "",
+  },
+  {
+    id: 2,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsh-vwIw4nZLQ5lUJf-hnz7uQiEykeKqMfeg&usqp=CAU",
+    title: "Крэйзи пепперони",
+    description: "Для крейзи людей",
+    content:
+      "Моцарелла, сладкий перец, томаты, красный лук, фарш из говядины, сушеный перец чили, томатный соус",
+    contentFooter:
+      "",
+  },
+  {
+    id: 3,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_u-ys58DEcCU6NIBMuibEWBmUX6SZCTWwiA&usqp=CAU",
+    title:
+      "Кисло-сладкий цыпленок",
+    description: "Много витаминов",
+    content:"Цыпленок, сырный соус, моцарелла, томаты, соус альфредо, смесь сыров чеддер и пармезан, чеснок сухой",
+    contentFooter:
+      "",
+  },
+  {
+    id: 4,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0kA7ZK27SJs_v_ozvs2NP6YP_h2AlIDOC3w&usqp=CAU",
+    title: "Чизбургер-пицца",
+    description: "Аппетитно",
+    content:
+      "Томатный соус, сладкий перец, красный лук, моцарелла, острый перец халапеньо, томаты, соус сальса, цыпленок",
+    contentFooter:
+      "",
+  },
+  {
+    id: 5,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUYT8My8srLFFpvkk2ZWeJkwtNSyEGDJ7JZw&usqp=CAU",
+    title: "Сырная 🌱",
+    description: "Сытно",
+    content:"Увеличенная порция моцареллы, сыры чеддер и пармезан, соус альфредо",
+    contentFooter:
+      "",
+  },
+  {
+    id: 6,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4JFrQG45obUrF0uuJuosODr_SD1-tqtj6UQ&usqp=CAU",
+    title: "Пепперони",
+    description: "Вкусно",
+    content:
+      "Ветчина из цыпленка, сыры чеддер и пармезан, моцарелла, красный лук, чеснок, соус альфредо, итальянские травы, томаты",
+    contentFooter:
+      "",
+  },{
+    id: 7,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4JFrQG45obUrF0uuJuosODr_SD1-tqtj6UQ&usqp=CAU",
+    title: "Пепперони",
+    description: "Вкусно",
+    content:
+      "Ветчина из цыпленка, сыры чеддер и пармезан, моцарелла, красный лук, чеснок, соус альфредо, итальянские травы, томаты",
+    contentFooter:
+      "",
+  },{
+    id: 8,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4JFrQG45obUrF0uuJuosODr_SD1-tqtj6UQ&usqp=CAU",
+    title: "Пепперони",
+    description: "Вкусно",
+    content:
+      "Ветчина из цыпленка, сыры чеддер и пармезан, моцарелла, красный лук, чеснок, соус альфредо, итальянские травы, томаты",
+    contentFooter:
+      "",
+  },{
+    id: 9,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4JFrQG45obUrF0uuJuosODr_SD1-tqtj6UQ&usqp=CAU",
+    title: "Пепперони",
+    description: "Вкусно",
+    content:
+      "Ветчина из цыпленка, сыры чеддер и пармезан, моцарелла, красный лук, чеснок, соус альфредо, итальянские травы, томаты",
+    contentFooter:
+      "",
+  },{
+    id: 10,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4JFrQG45obUrF0uuJuosODr_SD1-tqtj6UQ&usqp=CAU",
+    title: "Пепперони",
+    description: "Вкусно",
+    content:
+      "Ветчина из цыпленка, сыры чеддер и пармезан, моцарелла, красный лук, чеснок, соус альфредо, итальянские травы, томаты",
+    contentFooter:
+      "",
   },
 ];
