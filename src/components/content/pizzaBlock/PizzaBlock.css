@@ -11,6 +11,16 @@
   .pizza-block__image {
     width: 260px;
   }
+  .pizza-block img {
+    -webkit-transform: scale(1.5);
+    transform: scale(0.9);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  .pizza-block:hover img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
   .pizza-block__title {
     font-size: 20px;
     font-weight: 900;

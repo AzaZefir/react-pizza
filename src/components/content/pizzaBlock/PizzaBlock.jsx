@@ -1,6 +1,7 @@
 import { CardAddPlusSvg } from '../../../assets/svg/Svg';
 import { useState } from 'react';
 import cn from 'classnames';
+import Button from '../../../commons/button/Button';
 
 const PizzaBlock = ({ image, name, price, types, sizes, setId, pizzaId, setModalActive }) => {
   const availableTypes = ['тонкое', 'традиционное'];
@@ -55,11 +56,11 @@ const PizzaBlock = ({ image, name, price, types, sizes, setId, pizzaId, setModal
       </div>
       <div className="pizza-block__bottom">
         <div className="pizza-block__price">от {price} ₽</div>
-        <div className="button button--outline button--add">
+        <Button className=" button--outline button--add">
           <CardAddPlusSvg />
           <span>Добавить</span>
           <i>2</i>
-        </div>
+        </Button>
       </div>
     </div>
   );

@@ -111,7 +111,6 @@ export const pizzaBlock = [
     rating: '4',
   },
 ];
-
 export const pizzasInBusket = [
   {
     id: 1,
@@ -150,7 +149,6 @@ export const pizzasInBusket = [
     price: 53,
   },
 ];
-
 export const sliderCard = [
   {
     id: 1,
