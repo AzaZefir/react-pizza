@@ -2,16 +2,20 @@ import SliderSlick from '../../commons/slider/Slider';
 import Categories from './categories/Categories';
 import PizzaBlock from './pizzaBlock/PizzaBlock';
 import Sort from './sort/Sort';
-import { useState } from 'react';
 import MyModal from '../../commons/modal/MyModal';
 import { PizzaInfoCard } from './pizzaInfoCard/PizzaInfoCard';
+import { useState } from 'react';
 
-const Content = ({ pizzas, setPizzas }) => {
+
+const Content = ({pizzas,setPizzas}) => {
   const [categories, setCategories] = useState(null);
   const [sort, setSort] = useState({
     type: 'rating',
   });
+
   const [filter, setFilter] = useState(pizzas);
+
+
 
   //!activate modal when click on img by own data
   const [id, setId] = useState(0);
@@ -58,7 +62,8 @@ const Content = ({ pizzas, setPizzas }) => {
         </div>
         <h2 className="content__title">Все пиццы</h2>
         <div className="content__items">
-          {filter.map((pizza) => (
+         {
+          filter.map((pizza) => (
             <PizzaBlock
               key={pizza.id}
               {...pizza}
@@ -69,7 +74,8 @@ const Content = ({ pizzas, setPizzas }) => {
               setId={setId}
               pizzaId={pizza.id}
             />
-          ))}
+          ))
+            }
         </div>
         <MyModal active={modalActive} setActive={setModalActive}>
           <PizzaInfoCard id={id} />
