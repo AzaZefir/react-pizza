@@ -2,7 +2,7 @@ import { CardAddPlusSvg } from '../../../assets/svg/Svg';
 import { useState } from 'react';
 import cn from 'classnames';
 import Button from '../../../commons/button/Button';
-import { useCart } from 'react-use-cart';
+// import { useCart } from 'react-use-cart';
 
 const PizzaBlock = ({
   id,
@@ -14,10 +14,10 @@ const PizzaBlock = ({
   setId,
   pizzaId,
   setModalActive,
-  pizza,
+  onClickAddPizza,
+  addedCount,
 }) => {
-  const { addItem } = useCart();
-
+  // const { addItem } = useCart();
   const availableTypes = ['тонкое', 'традиционное'];
   const availableSizes = [26, 30, 40];
   const [activeType, setActiveType] = useState(types[0]);
@@ -45,7 +45,8 @@ const PizzaBlock = ({
       size: availableSizes[activeSize],
       type: availableTypes[activeType],
     };
-    addItem(obj);  
+   
+    onClickAddPizza(obj);
   };
 
   return (
@@ -85,7 +86,7 @@ const PizzaBlock = ({
         <Button className="button--outline button--add">
           <CardAddPlusSvg />
           <span>Добавить</span>
-          <i>1</i>
+          {addedCount && <i>{addedCount}</i>}
         </Button>
       </div>
     </div>

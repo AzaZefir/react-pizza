@@ -6,7 +6,9 @@ const Sort = ({ items, onClickSort,activeSortType }) => {
 
   // const activeLable =items[active].name
 
-  const activeLable = items.find((item)=> item.type === activeSortType).name
+  
+  const activeLable = items.find((item) => item.type === activeSortType).name
+  
   const onSelectSort = (index) => {
     onClickSort(index);
     setVisible(true)

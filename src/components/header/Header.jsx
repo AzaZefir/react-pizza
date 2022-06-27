@@ -1,14 +1,14 @@
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useCart } from 'react-use-cart';
+// import { useCart } from 'react-use-cart';
 import Logo from '../../assets/img/logoPizza.svg';
 import { HeaderSvg } from '../../assets/svg/Svg';
 import Button from '../../commons/button/Button';
 
 const Header = () => {
-  const {
-    totalItems,
-    cartTotal
-  } = useCart();
+  const { totalPrice, totalCount } = useSelector(({ cart }) => cart);
+
+  // const {totalItems,cartTotal} = useCart();
   return (
     <div className="header">
       <div className="container">
@@ -25,10 +25,10 @@ const Header = () => {
         <div className="header__cart">
           <Link to="/basket">
             <Button className="button--cart">
-              <span>{cartTotal} ₽</span>
+              <span>{totalPrice} ₽</span>
               <div className="button__delimiter"></div>
               <HeaderSvg />
-              <span >{totalItems}</span>
+              <span >{totalCount}</span>
             </Button>
           </Link>
         </div>
