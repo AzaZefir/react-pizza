@@ -10,8 +10,9 @@ const Sort = ({ items, onClickSort,activeSortType }) => {
   const activeLable = items.find((item) => item.type === activeSortType).name
   
   const onSelectSort = (index) => {
-    onClickSort(index);
+    if (onClickSort) { onClickSort(index) };
     setVisible(true)
+    
   };
   const onVisible = () => {
     setVisible(!visible)
@@ -30,7 +31,7 @@ const Sort = ({ items, onClickSort,activeSortType }) => {
           {items.map((item, index) => (
             <li
               className={activeSortType === item.type ? 'active' : ''}
-              key={`${item}_${index}`}
+              key={`${item.type}_${index}`}
               onClick={() => onSelectSort(item)}>
               {item.name}
             </li>

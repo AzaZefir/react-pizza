@@ -8,54 +8,63 @@ import { useState, useEffect } from 'react';
 import { setPizzas } from '../../redux/actions/pizzaAction';
 import { fetchPizzas } from '../../api/fetchPizzas';
 import { useDispatch, useSelector } from 'react-redux';
+import { setCategory, setSortBy } from '../../redux/actions/filterAction';
+import { useCallback } from 'react';
+import LoadingSkeleton from '../../commons/loader/Loader';
 
 const Content = () => {
   const dispatch = useDispatch();
 
   const items = useSelector(({ pizzas }) => pizzas.items);
   const cartItems = useSelector(({ cart }) => cart.items);
+  const isLoaded = useSelector(({ pizzas }) => pizzas.isLoaded);
+  const { category, sortBy } = useSelector(({ filters }) => filters);
+  // const [categories, setCategories] = useState(null);
+  // const [sort, setSort] = useState({
+  //   type: 'rating',
+  // });
 
-  const [categories, setCategories] = useState(null);
-  const [sort, setSort] = useState({
-    type: 'rating',
-  });
-  const [filter, setFilter] = useState(items);
-   //!activate modal when click on img by own data
-   const [id, setId] = useState(0);
-   const [modalActive, setModalActive] = useState(false);
-
-  
+  // const [filter, setFilter] = useState(items);
+  //!activate modal when click on img by own data
+  const [id, setId] = useState(0);
+  const [modalActive, setModalActive] = useState(false);
 
   useEffect(() => {
-    dispatch(fetchPizzas());
-  }, []);
+    dispatch(fetchPizzas(sortBy, category));
+  }, [category, dispatch, sortBy]);
 
-  // const onSelectCategory = useCallback((index) => {
-  //   dispatch(setCategory(index));
-  // }, [dispatch]);
+  const onSelectCategory = useCallback(
+    (index) => {
+      dispatch(setCategory(index));
+    },
+    [dispatch],
+  );
 
-  // const onSelectSortType = useCallback((type) => {
-  //   dispatch(setSortBy(type));
-  // }, [dispatch]);
+  const onSelectSortType = useCallback(
+    (type) => {
+      dispatch(setSortBy(type));
+    },
+    [dispatch],
+  );
 
-  const onClickCategories = (index) => {
-    setCategories(categories);
-  };
-  const onClickSort = (type) => {
-    setSort(type);
-    const sortedPizzas = items.sort((a, b) => a[type.type]?.localeCompare(b[type.type]));
-    setPizzas(sortedPizzas);
-  };
-  const onFilter = (categoryItem) => {
-    if (categoryItem === '') {
-      setFilter(items);
-      return;
-    }
-    const result = items.filter((currentItem) => {
-      return currentItem.category === categoryItem;
-    });
-    setFilter(result);
-  };
+  // const onClickCategories = (index) => {
+  //   setCategories(categories);
+  // };
+  // const onClickSort = (type) => {
+  //   setSort(type);
+  //   const sortedPizzas = items.sort((a, b) => a[type.type]?.localeCompare(b[type.type]));
+  //   setPizzas(sortedPizzas);
+  // };
+  // const onFilter = (categoryItem) => {
+  //   if (categoryItem === '') {
+  //     setFilter(items);
+  //     return;
+  //   }
+  //   const result = items.filter((currentItem) => {
+  //     return currentItem.category === categoryItem;
+  //   });
+  //   setFilter(result);
+  // };
 
   const handleAddPizzaToCart = (obj) => {
     dispatch({
@@ -70,36 +79,41 @@ const Content = () => {
         <SliderSlick />
         <div className="content__top">
           <Categories
-            onFilter={onFilter}
-            onClickCategories={onClickCategories}
+            activeCategory={category}
+            // onFilter={onFilter}
+            onClickCategories={onSelectCategory}
             items={['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые']}
           />
           <Sort
-            activeSortType={sort.type}
-            onClickSort={onClickSort}
+            activeSortType={sortBy.type}
+            onClickSort={onSelectSortType}
             items={[
-              { name: 'популярности', type: 'rating' },
-              { name: 'цене', type: 'price' },
-              { name: 'алфавит', type: 'name' },
+              { name: 'популярности', type: 'popular', order: 'desc' },
+              { name: 'цене', type: 'price', order: 'desc' },
+              { name: 'алфавит', type: 'name', order: 'asc' },
             ]}
           />
         </div>
         <h2 className="content__title">Все пиццы</h2>
         <div className="content__items">
-          {filter.map((pizza) => (
-            <PizzaBlock
-              key={pizza.id}
-              {...pizza}
-              onClickAddPizza={handleAddPizzaToCart}
-              pizzas={items}
-              pizza={pizza}
-              setPizzas={setPizzas}
-              setModalActive={setModalActive}
-              setId={setId}
-              pizzaId={pizza.id}
-              addedCount={cartItems[pizza.id] && cartItems[pizza.id].items.length}
-            />
-          ))}
+          {isLoaded
+            ? items.map((pizza) => (
+                <PizzaBlock
+                  key={pizza.id}
+                  {...pizza}
+                  onClickAddPizza={handleAddPizzaToCart}
+                  pizzas={items}
+                  pizza={pizza}
+                  setPizzas={setPizzas}
+                  setModalActive={setModalActive}
+                  setId={setId}
+                  pizzaId={pizza.id}
+                  addedCount={cartItems[pizza.id] && cartItems[pizza.id].items.length}
+                />
+              ))
+            : Array(12)
+                .fill(0)
+                .map((_, index) => <LoadingSkeleton key={index} />)}
         </div>
         <MyModal active={modalActive} setActive={setModalActive}>
           <PizzaInfoCard id={id} />
